@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()" #articleForm="ngForm">
+  Title
+  <input type="text"
+    name="title"
+    [(ngModel)]="article.title"
+    placeholder="{{article.title}}"
+    required #title="ngModel">
+  Content
+  <input type="textarea"
+    name="content"
+    [(ngModel)]="article.content"
+    placeholder="{{article.content}}"
+    required #content="ngModel">
+  <button type="submit">
+    Submit</button>
+    <button class="delete" title="delete article" (click)="delete(article); this.isShow = false">x</button>
+</form>
